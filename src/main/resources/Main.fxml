@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Importation des classes nécessaires de JavaFX -->
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!-- Définition du conteneur racine de type AnchorPane -->
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.MainController"
+            prefWidth="800" prefHeight="600"
+            style="-fx-background-image: url('images/bookshelf.jpg');
+                   -fx-background-size: cover;">
+
+    <!-- Label stylisé servant de titre de la page -->
+    <Label text="Bienvenue dans la Bibliothèque"
+           layoutX="110" layoutY="80"
+           style="-fx-text-fill: #FAFAD2;
+                  -fx-font-size: 36px;
+                  -fx-font-weight: bold;
+                  -fx-font-family: 'Georgia';
+                  -fx-effect: dropshadow(gaussian, black, 8, 0.4, 2, 2);" />
+
+    <!-- VBox utilisée pour organiser verticalement les boutons avec un espacement -->
+    <VBox alignment="CENTER" spacing="30"
+          layoutX="0" layoutY="180"
+          prefWidth="800" prefHeight="300">
+
+        <!-- Bouton permettant d'accéder à la gestion des étudiants -->
+        <Button text="👨‍🎓 Gérer les Étudiants"
+                onAction="#gererEtudiants"
+                style="-fx-font-size: 20px;
+                       -fx-font-family: 'Georgia';
+                       -fx-font-weight: bold;
+                       -fx-text-fill: #FAFAD2;
+                       -fx-background-color: linear-gradient(to bottom, #1A2238, #141E30);
+                       -fx-border-radius: 15;
+                       -fx-background-radius: 15;
+                       -fx-border-color: #5C5C5C;
+                       -fx-border-width: 2;
+                       -fx-padding: 15px 25px;"
+                minWidth="350" minHeight="60" />
+
+        <!-- Bouton permettant d'accéder à la gestion des livres -->
+        <Button text="📚 Gérer les Livres"
+                onAction="#gererLivres"
+                style="-fx-font-size: 20px;
+                       -fx-font-family: 'Georgia';
+                       -fx-font-weight: bold;
+                       -fx-text-fill: #FAFAD2;
+                       -fx-background-color: linear-gradient(to bottom, #3E2723, #1B1B1B);
+                       -fx-border-radius: 15;
+                       -fx-background-radius: 15;
+                       -fx-border-color: #8D6E63;
+                       -fx-border-width: 2;
+                       -fx-padding: 15px 25px;"
+                minWidth="350" minHeight="60" />
+
+        <!-- Bouton permettant d'accéder à la gestion des emprunts -->
+        <Button text="🔁 Gérer les Emprunts"
+                onAction="#gererEmprunts"
+                style="-fx-font-size: 20px;
+                       -fx-font-family: 'Georgia';
+                       -fx-font-weight: bold;
+                       -fx-text-fill: #FAFAD2;
+                       -fx-background-color: linear-gradient(to bottom, #1C2833, #212F3D);
+                       -fx-border-radius: 15;
+                       -fx-background-radius: 15;
+                       -fx-border-color: #5D6D7E;
+                       -fx-border-width: 2;
+                       -fx-padding: 15px 25px;"
+                minWidth="350" minHeight="60" />
+    </VBox>
+</AnchorPane>
