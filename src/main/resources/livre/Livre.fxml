@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Importation des composants JavaFX utilisés dans cette interface -->
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!-- Conteneur principal vertical avec centrage et couleur de fond -->
+<VBox alignment="CENTER" prefHeight="640" prefWidth="900" spacing="20" style="-fx-background-color: linear-gradient(to bottom, #1B263B, #415A77);" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LivreController">
+
+    <!-- Marge intérieure du VBox -->
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <!-- Titre principal de la page -->
+    <Label style="-fx-text-fill: #87CEFA;
+                  -fx-font-family: 'Georgia';
+                  -fx-font-weight: bold;
+                  -fx-font-size: 28px;
+                  -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.3), 4, 0, 2, 2);"
+           text="📘 Gestion des Livres" />
+
+    <!-- Barre de recherche avec champ et bouton -->
+    <HBox alignment="CENTER" spacing="10" style="-fx-background-color: #E0E0E0; -fx-background-radius: 8; -fx-padding: 10;">
+        <!-- Champ texte pour recherche -->
+        <TextField fx:id="searchField" prefWidth="300" promptText="Rechercher par titre, auteur ou catégorie"
+                   style="-fx-font-size: 14px;
+                          -fx-font-family: 'Georgia';
+                          -fx-background-radius: 6;
+                          -fx-border-radius: 6;" />
+        <!-- Bouton de recherche avec action liée -->
+        <Button onAction="#rechercherLivre"
+                style="-fx-background-color: linear-gradient(to right, #415A77, #1B263B);
+                       -fx-text-fill: #F4F1DE;
+                       -fx-font-weight: bold;
+                       -fx-background-radius: 8;
+                       -fx-padding: 8 16;
+                       -fx-font-size: 14px;
+                       -fx-font-family: 'Georgia';
+                       -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);"
+                text="🔍 Rechercher" />
+    </HBox>
+
+    <!-- Formulaire de saisie des données d'un livre -->
+    <VBox spacing="15" style="-fx-background-color: #E0E0E0; -fx-padding: 15; -fx-background-radius: 8;">
+
+        <!-- Ligne de saisie : Code -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label prefWidth="100"
+                   style="-fx-font-weight: bold;
+                          -fx-font-size: 14px;
+                          -fx-font-family: 'Georgia';
+                          -fx-text-fill: #020c67;"
+                   text="Code:" />
+            <TextField fx:id="idField" prefWidth="200" promptText="Code livre"
+                       style="-fx-font-size: 14px;
+                              -fx-font-family: 'Georgia';
+                              -fx-background-radius: 6;
+                              -fx-border-radius: 6;" />
+            <!-- Champ obligatoire -->
+            <Label style="-fx-text-fill: red; -fx-font-size: 14px;" text="*" />
+        </HBox>
+
+        <!-- Ligne de saisie : Titre -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label prefWidth="100"
+                   style="-fx-font-weight: bold;
+                          -fx-font-size: 14px;
+                          -fx-font-family: 'Georgia';
+                          -fx-text-fill: #020c67;"
+                   text="Titre:" />
+            <TextField fx:id="titreField" prefWidth="300" promptText="Titre du livre"
+                       style="-fx-font-size: 14px;
+                              -fx-font-family: 'Georgia';
+                              -fx-background-radius: 6;
+                              -fx-border-radius: 6;" />
+            <Label style="-fx-text-fill: red; -fx-font-size: 14px;" text="*" />
+        </HBox>
+
+        <!-- Ligne de saisie : Auteur -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label prefWidth="100"
+                   style="-fx-font-weight: bold;
+                          -fx-font-size: 14px;
+                          -fx-font-family: 'Georgia';
+                          -fx-text-fill: #020c67;"
+                   text="Auteur:" />
+            <TextField fx:id="auteurField" prefWidth="300" promptText="Auteur du livre"
+                       style="-fx-font-size: 14px;
+                              -fx-font-family: 'Georgia';
+                              -fx-background-radius: 6;
+                              -fx-border-radius: 6;" />
+        </HBox>
+
+        <!-- Ligne de saisie : Catégorie -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label prefWidth="100"
+                   style="-fx-font-weight: bold;
+                          -fx-font-size: 14px;
+                          -fx-font-family: 'Georgia';
+                          -fx-text-fill: #020c67;"
+                   text="Catégorie:" />
+            <TextField fx:id="categorieField" prefWidth="300" promptText="Catégorie du livre"
+                       style="-fx-font-size: 14px;
+                              -fx-font-family: 'Georgia';
+                              -fx-background-radius: 6;
+                              -fx-border-radius: 6;" />
+        </HBox>
+
+        <!-- Ligne de saisie : Année -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label prefWidth="100"
+                   style="-fx-font-weight: bold;
+                          -fx-font-size: 14px;
+                          -fx-font-family: 'Georgia';
+                          -fx-text-fill: #020c67;"
+                   text="Année:" />
+            <TextField fx:id="anneeField" prefWidth="100" promptText="2023"
+                       style="-fx-font-size: 14px;
+                              -fx-font-family: 'Georgia';
+                              -fx-background-radius: 6;
+                              -fx-border-radius: 6;" />
+        </HBox>
+
+        <!-- Ligne de saisie : Quantité -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label prefWidth="100"
+                   style="-fx-font-weight: bold;
+                          -fx-font-size: 14px;
+                          -fx-font-family: 'Georgia';
+                          -fx-text-fill: #020c67;"
+                   text="Quantité:" />
+            <TextField fx:id="quantiteField" prefWidth="100" promptText="0"
+                       style="-fx-font-size: 14px;
+                              -fx-font-family: 'Georgia';
+                              -fx-background-radius: 6;
+                              -fx-border-radius: 6;" />
+        </HBox>
+    </VBox>
+
+    <!-- Tableau d'affichage des livres -->
+    <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-padding: 0;">
+        <TableView fx:id="livresTable" onMouseClicked="#remplirChampsDepuisTable" prefHeight="200" prefWidth="700"
+                   style="-fx-font-family: 'Georgia';
+                          -fx-font-size: 14px;
+                          -fx-control-inner-background: white;">
+            <!-- Définition des colonnes du tableau -->
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="80" text="Code" />
+                <TableColumn fx:id="titreColumn" prefWidth="180" text="Titre" />
+                <TableColumn fx:id="auteurColumn" prefWidth="150" text="Auteur" />
+                <TableColumn fx:id="categorieColumn" prefWidth="120" text="Catégorie" />
+                <TableColumn fx:id="anneeColumn" prefWidth="80" text="Année" />
+                <TableColumn fx:id="quantiteColumn" prefWidth="80" text="Quantité" />
+            </columns>
+            <!-- Politique de redimensionnement automatique -->
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </ScrollPane>
+
+    <!-- Boutons de gestion des actions (CRUD) -->
+    <HBox alignment="CENTER" spacing="15">
+        <!-- Bouton Ajouter -->
+        <Button onAction="#ajouterLivre" prefHeight="40" prefWidth="120"
+                style="-fx-background-color: linear-gradient(to bottom, #415A77, #1B263B);
+                       -fx-text-fill: #F4F1DE;
+                       -fx-font-weight: bold;
+                       -fx-font-size: 14px;
+                       -fx-font-family: 'Georgia';
+                       -fx-background-radius: 8;"
+                text="➕ Ajouter" />
+
+        <!-- Bouton Modifier -->
+        <Button onAction="#modifierLivre" prefHeight="40" prefWidth="120"
+                style="-fx-background-color: linear-gradient(to bottom, #415A77, #1B263B);
+                       -fx-text-fill: #F4F1DE;
+                       -fx-font-weight: bold;
+                       -fx-font-size: 14px;
+                       -fx-font-family: 'Georgia';
+                       -fx-background-radius: 8;"
+                text="✏ Modifier" />
+
+        <!-- Bouton Supprimer -->
+        <Button onAction="#supprimerLivre" prefHeight="40" prefWidth="120"
+                style="-fx-background-color: linear-gradient(to bottom, #415A77, #1B263B);
+                       -fx-text-fill: #F4F1DE;
+                       -fx-font-weight: bold;
+                       -fx-font-size: 14px;
+                       -fx-font-family: 'Georgia';
+                       -fx-background-radius: 8;"
+                text="🗑 Supprimer" />
+
+        <!-- Bouton Initialiser les champs -->
+        <Button onAction="#initialiserChamps" prefHeight="40" prefWidth="120"
+                style="-fx-background-color: linear-gradient(to bottom, #415A77, #1B263B);
+                       -fx-text-fill: #F4F1DE;
+                       -fx-font-weight: bold;
+                       -fx-font-size: 14px;
+                       -fx-font-family: 'Georgia';
+                       -fx-background-radius: 8;"
+                text="🔄 Initialiser" />
+
+        <!-- Bouton Retour au menu principal -->
+        <Button onAction="#retourMenu" prefHeight="40" prefWidth="120"
+                style="-fx-background-color: linear-gradient(to bottom, #415A77, #1B263B);
+                       -fx-text-fill: #F4F1DE;
+                       -fx-font-weight: bold;
+                       -fx-font-size: 14px;
+                       -fx-font-family: 'Georgia';
+                       -fx-background-radius: 8;"
+                text="🔙 Retour" />
+    </HBox>
+</VBox>
