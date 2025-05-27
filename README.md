@@ -1,4 +1,4 @@
-# Systeme-de-Gestion-de-Bibliotheque-Universitaire
+# Gestion-des-emprunts-des-livres-au-Bibliotheque-Universitaire
 Application JavaFX complète pour la gestion d'une bibliothèque universitaire. Elle permet de gérer les étudiants, les livres et les emprunts avec une interface utilisateur intuitive et des fonctionnalités CRUD complètes.
 
 🌟 Fonctionnalités Principales
