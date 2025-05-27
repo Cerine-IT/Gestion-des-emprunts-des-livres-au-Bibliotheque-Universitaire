@@ -22,7 +22,6 @@ Application JavaFX complète pour la gestion d'une bibliothèque universitaire. 
 - Contrôle des dates : Validation de la cohérence des périodes
 
 📦 Structure des Packages
-``
 src/
 ├── main/
 │   ├── java/
@@ -51,7 +50,6 @@ src/
 │       │   ├── Livre.fxml
 │       ├── Main.fxml
 │       └── images/          # Ressources graphiques
-``
 
 ⚙ Prérequis & Installation
 
