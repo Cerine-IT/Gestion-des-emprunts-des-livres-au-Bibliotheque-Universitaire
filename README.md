@@ -110,7 +110,9 @@ CREATE TABLE Emprunt (
 - Modifier les identifiants dans OracleXEConnection.java
 - Vérifier le chemin JDBC dans la même classe
 
-   Interfaces Utilisateur
+
+  * Interfaces Utilisateur
+  
 🏠 Écran Principal (Main.fxml)
 - Fond d'écran thématique
 - Boutons d'accès aux modules principaux
