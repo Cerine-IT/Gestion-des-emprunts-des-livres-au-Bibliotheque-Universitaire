@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class DashboardController {
-    // Properly declare all FXML elements with correct types
+    // Properly declare all FXML elements w
     @FXML private Label totalLivresLabel;
     @FXML private Label totalEtudiantsLabel;
     @FXML private Label livresEmpruntesLabel;
